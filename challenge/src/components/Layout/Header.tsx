@@ -1,10 +1,11 @@
 // Styles and images
 import logoImg from "../../assets/logo.svg"
+import { ContainerHeader } from "./styles/styles"
 
 export function Header() {
   return (
-    <header>
+    <ContainerHeader>
       <img src={logoImg} alt="Logo" />
-    </header>
+    </ContainerHeader>
   )
 }
