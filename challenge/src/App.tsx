@@ -1,13 +1,11 @@
-// Style and images
-import "./styles/global.css"
-import logoImg from "./assets/logo.svg"
+// Components
+import { Header } from "./components/Layout/Header"
 
 
 function App() {
   return (
     <div>
-      Iniciando
-      <img src={logoImg} alt="Logo" />
+     
     </div>
   )
 }
