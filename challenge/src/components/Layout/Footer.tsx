@@ -1,6 +1,9 @@
+// Styles and images
+import { ContainerFooter } from "./styles/styles"
+
 export function Footer() {
   return (
-    <footer>
+    <ContainerFooter>
       <span>
         Sobre
       </span>
@@ -16,6 +19,6 @@ export function Footer() {
       <span>
         Política de privacidade
       </span>
-    </footer>
+    </ContainerFooter>
   )
 }
