@@ -1,16 +1,21 @@
-import style from "styled-components"
+import styled from "styled-components"
 
-export const ContainerHeader = style.header`
+export const ContainerHeader = styled.header`
   display: flex;
   justify-content: center;
   width: 100%;
-  padding: 24px 0;
+  padding: 13px 0;
   border: 1px solid;
   border-image-slice: 1;
   border-image-source: linear-gradient(to right, #A11CF3, #D835C5);
   border-left: 0;
   border-right: 0;
   border-top: 0; 
+
+  img {
+    width: 146px;
+    height: 54px;
+  }
 
   @media (max-width: 425px) {
     img {
@@ -31,17 +36,18 @@ export const ContainerHeader = style.header`
   }
 `;
 
-export const ContainerFooter = style.footer`
+export const ContainerFooter = styled.footer`
   display: flex;
   justify-content: center;
   width: 100%;
-  padding: 24px 0;
+  padding: 21.5px 0;
   gap: 36px;
   background-color: #E9E9E9;
   position: absolute;
   bottom: 0;
 
   span {
+    align-self: center;
     font-weight: 600;
     font-size: 16px;
     line-height: 22px;
@@ -92,4 +98,9 @@ export const ContainerFooter = style.footer`
       line-height: 19px
     }
   }
+`;
+
+export const ContainerLayout = styled.div`
+  position: relative;
+  min-height: 100vh;
 `;
