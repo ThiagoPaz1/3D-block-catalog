@@ -57,11 +57,11 @@ export const ContainerFooter = styled.footer`
   @media (max-width: 425px) {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
     padding: 24px 0;
     gap: 12px;
 
     span {
+      align-self: flex-start;
       width: 157px;
       margin-left: 14px;
       font-size: 15px;
@@ -77,6 +77,7 @@ export const ContainerFooter = styled.footer`
     gap: 12px;
 
     span {
+      align-self: flex-start;
       width: 147px;
       margin-left: 14px;
       font-size: 14px;
@@ -92,6 +93,7 @@ export const ContainerFooter = styled.footer`
     gap: 12px;
 
     span {
+      align-self: flex-start;
       width: 147px;
       margin-left: 14px;
       font-size: 14px;
