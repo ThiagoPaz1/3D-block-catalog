@@ -1,5 +1,5 @@
 // Styles and images
-import { ContainerListFamilies } from "./styles/styles"
+import { ContainerListFamilies, ContainerList } from "./styles/styles"
 
 export function ListFamilies() {
   return (
@@ -7,6 +7,10 @@ export function ListFamilies() {
       <h1>
         Resultados
       </h1>
+
+      <ContainerList>
+        
+      </ContainerList>
     </ContainerListFamilies>
   )
 }
