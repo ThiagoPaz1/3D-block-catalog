@@ -1,4 +1,4 @@
-type Family = {
+type ResponseData = {
   id: string
   premium:boolean
   details: {
@@ -7,7 +7,7 @@ type Family = {
   }
 }
 
-export async function getFamilies(skip: number, take: number): Promise<Family[]> {
+export async function getFamilies(skip: number, take: number): Promise<ResponseData[]> {
   const url = `https://test-candidaturas-front-end.onrender.com/families?skip=${skip}&take=${take}`
   const response = await fetch(url)
   const data = response.json()
