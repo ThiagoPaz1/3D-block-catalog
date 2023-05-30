@@ -1,6 +1,7 @@
 // Components
 import { Layout } from "./components/Layout"
 import { AnnouncementBar } from "./components/AnnouncementBar"
+import { Catalog } from "./pages/Catalog"
 
 // Hooks and contexts
 import { useScreenWidth } from "./hooks/useScreenWidth"
@@ -16,7 +17,7 @@ function App() {
       }
 
       <Layout>
-        MAIN
+        <Catalog />
       </Layout>
 
       {
