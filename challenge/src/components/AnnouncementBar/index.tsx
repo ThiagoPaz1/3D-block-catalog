@@ -1,7 +1,7 @@
 // Styles and images
 import rightArrowImg from "../../assets/rightArrow.svg"
 
-export function Announcement() {
+export function AnnouncementBar() {
   return (
     <div>
       <p>
