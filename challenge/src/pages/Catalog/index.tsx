@@ -1,3 +1,6 @@
+// Components
+import { ListFamilies } from "../../components/ListFamilies"
+
 // Styles and images
 import { ContainerCatalog } from "./styles/styles"
 
@@ -11,7 +14,7 @@ export function Catalog() {
         <span />
       </ContainerCatalog>
 
-
+      <ListFamilies />
     </div>
   )
 }
