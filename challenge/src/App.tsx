@@ -6,11 +6,12 @@ import { AnnouncementBar } from "./components/AnnouncementBar"
 import { useScreenWidth } from "./hooks/useScreenWidth"
 
 function App() {
-  const { screenWidth } = useScreenWidth()
+  const { isMatch } = useScreenWidth("(max-width: 425px)")
+
   return (
     <>
       {
-        screenWidth > 425 &&
+        !isMatch &&
         <AnnouncementBar />
       }
 
@@ -19,7 +20,7 @@ function App() {
       </Layout>
 
       {
-        screenWidth <= 425 &&
+        isMatch &&
         <AnnouncementBar />
       }
     </>
