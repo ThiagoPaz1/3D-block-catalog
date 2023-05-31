@@ -1,5 +1,10 @@
 import styled from "styled-components"
 
+export const ContainerLayout = styled.div`
+  position: relative;
+  min-height: 100vh;
+`;
+
 export const ContainerHeader = styled.header`
   display: flex;
   justify-content: center;
@@ -98,9 +103,4 @@ export const ContainerFooter = styled.footer`
       line-height: 19px
     }
   }
-`;
-
-export const ContainerLayout = styled.div`
-  position: relative;
-  min-height: 100vh;
 `;

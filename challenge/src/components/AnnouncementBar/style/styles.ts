@@ -39,7 +39,7 @@ export const ContainerAnnouncementBar = styled.div`
   @media (max-width: 425px) {
     flex-direction: column;
     padding: 24px 0;
-
+    
     div {
       font-weight: 600;
       font-size: 15.5px;
