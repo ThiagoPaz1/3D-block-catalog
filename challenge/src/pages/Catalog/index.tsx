@@ -2,11 +2,11 @@
 import { ListFamilies } from "../../components/ListFamilies"
 
 // Styles and images
-import { ContainerCatalog } from "./styles/styles"
+import { ContainerCatalogPage, ContainerCatalog } from "./styles/styles"
 
 export function Catalog() {
   return (
-    <div>
+    <ContainerCatalogPage>
       <ContainerCatalog>
         <h1>
           Catálogo
@@ -15,6 +15,6 @@ export function Catalog() {
       </ContainerCatalog>
 
       <ListFamilies />
-    </div>
+    </ContainerCatalogPage>
   )
 }

@@ -7,7 +7,7 @@ import { Catalog } from "./pages/Catalog"
 import { useScreenWidth } from "./hooks/useScreenWidth"
 
 function App() {
-  const { isMatch } = useScreenWidth("(max-width: 425px)")
+  const { isMatch } = useScreenWidth(425)
 
   return (
     <>

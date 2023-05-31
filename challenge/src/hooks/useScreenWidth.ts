@@ -4,15 +4,15 @@ type ScreenWidth = {
   isMatch: boolean
 }
 
-export function useScreenWidth(query: string): ScreenWidth {
+export function useScreenWidth(screenWidth: number): ScreenWidth {
   const [isMatch, setIsMatch] = useState(false)
 
   useEffect(() => {
     checkMediaQuery()
-  }, [isMatch, query]);
+  }, [isMatch, screenWidth]);
 
   function checkMediaQuery() {
-    const media = window.matchMedia(query)
+    const media = window.matchMedia(`(max-width: ${screenWidth}px)`)
     
     if (media.matches !== isMatch) {
       setIsMatch(media.matches)

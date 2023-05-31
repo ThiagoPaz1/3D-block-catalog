@@ -1,8 +1,6 @@
 type ResponseData = {
   id: string
-  premium:boolean
   details: {
-    description: string
     name: string
   }
 }

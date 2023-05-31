@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 import { TailSpin } from "react-loading-icons"
 
 // Components
@@ -14,30 +14,58 @@ import { Family } from "./types"
 import { familyImage } from "../../helps/familyImage"
 
 // Styles and images
-import { ContainerListFamilies, ContainerList } from "./styles/styles"
+import { ContainerListFamilies, ContainerList, LimitListWarning } from "./styles/styles"
 
 export function ListFamilies() {
   const [families, setFamilies] = useState<Family[]>([])
   const [isLoading, setIsLoading] = useState(false)
+  const [isLimit, setIsLimit] = useState(false)
+  const [skip, setSkip] = useState(0)
+  const pointForNewFetchRef = useRef<HTMLParagraphElement | null>(null)
+
+  useEffect(() => {
+    refetch()
+  }, [])
 
   useEffect(() => {
     addFamilies()
-  }, [])
+  }, [skip])
 
   async function addFamilies() {
-    setIsLoading(true)
+    const data = await getFamilies(skip, 21)
 
-    const data = await getFamilies(0, 21)
-    const familiesData: Family[] = data.map(i => ({
-      id: i.id,
-      name: i.details.name,
-      description: i.details.description,
-      premium: i.premium,
-      image: familyImage(i.id)
-    }))
+    if (data.length) {
+      const familiesData: Family[] = data.map(i => ({
+        id: i.id,
+        name: i.details.name,
+        image: familyImage(i.id)
+      }))
 
-    setFamilies(familiesData)
-    setIsLoading(false)
+      setFamilies([...families, ...familiesData])
+      return
+    }
+
+    setIsLimit(true)
+  }
+
+  function refetch() {
+    const options = {
+      root: null,
+      rootMargin: "20px",
+      threshold: 1.0
+    }
+
+    const intersectionObserver = new IntersectionObserver(entries => {
+      const target = entries[0]
+
+      if (target.isIntersecting) {
+        setSkip(currentState => currentState + 1)
+      }
+    }, options)
+
+    if (pointForNewFetchRef.current) {
+      intersectionObserver.observe(pointForNewFetchRef.current)
+    }
   }
 
   return (
@@ -46,24 +74,33 @@ export function ListFamilies() {
         Resultados
       </h1>
 
-      {
-        families.length ?
-          <ContainerList>
-            {
-              families.map(i =>
-                <CardFamily
-                  id={i.id}
-                  name={i.name}
-                  description={i.description}
-                  image={i.image}
-                />
-              )
-            }
-          </ContainerList> :
+      <ContainerList>
+        {
+          families.map(i =>
+            <CardFamily
+              key={i.id}
+              name={i.name}
+              image={i.image}
+            />
+          )
+        }
+      </ContainerList>
+      
+      <p ref={pointForNewFetchRef}>
+        {
+          !isLimit &&
           <TailSpin
             stroke="#A11CF3"
-            style={{ marginTop: "5rem" }}
+            style={{ marginTop: "2rem" }}
           />
+        }
+      </p>
+
+      {
+        isLimit &&
+        <LimitListWarning>
+          Não á mais famílias :/
+        </LimitListWarning>
       }
     </ContainerListFamilies>
   )

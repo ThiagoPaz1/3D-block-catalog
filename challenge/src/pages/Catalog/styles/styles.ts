@@ -1,9 +1,13 @@
 import styled from "styled-components"
 
+export const ContainerCatalogPage = styled.div`
+  margin-bottom: 5rem;
+`;
+
 export const ContainerCatalog = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 29px 199px;
+  padding: 29px 100px;
   background: #FBFBFB;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
 

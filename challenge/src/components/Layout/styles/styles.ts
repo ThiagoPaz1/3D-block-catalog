@@ -43,8 +43,6 @@ export const ContainerFooter = styled.footer`
   padding: 21.5px 0;
   gap: 36px;
   background-color: #E9E9E9;
-  position: absolute;
-  bottom: 0;
 
   span {
     align-self: center;
