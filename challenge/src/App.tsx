@@ -1,25 +1,27 @@
 // Components
 import { Layout } from "./components/Layout"
 import { AnnouncementBar } from "./components/AnnouncementBar"
+import { Catalog } from "./pages/Catalog"
 
 // Hooks and contexts
 import { useScreenWidth } from "./hooks/useScreenWidth"
 
 function App() {
-  const { screenWidth } = useScreenWidth()
+  const { isMatch } = useScreenWidth(425)
+
   return (
     <>
       {
-        screenWidth > 425 &&
+        !isMatch &&
         <AnnouncementBar />
       }
 
       <Layout>
-        MAIN
+        <Catalog />
       </Layout>
 
       {
-        screenWidth <= 425 &&
+        isMatch &&
         <AnnouncementBar />
       }
     </>

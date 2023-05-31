@@ -23,10 +23,23 @@ export const ContainerAnnouncementBar = styled.div`
     }
   }
 
+  @media (max-width: 768px) {
+    p {
+      width: 600px;
+      font-size: 15px;
+      line-height: 20px;
+      text-align: center;
+
+      span {
+        font-size: 15px;
+      }
+    }
+  }
+
   @media (max-width: 425px) {
     flex-direction: column;
     padding: 24px 0;
-
+    
     div {
       font-weight: 600;
       font-size: 15.5px;
@@ -130,6 +143,16 @@ export const Button = styled.button`
 
   img {
     margin-left: 15px;
+  }
+
+  @media (max-width: 768px) {
+    margin-right: 1rem;
+    
+    img {
+      width: 13px;
+      height: 13px;
+      margin-left: 13.33px;
+    }
   }
 
   @media (max-width: 425px) {
