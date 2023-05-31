@@ -15,6 +15,18 @@ export const ContainerListFamilies = styled.div`
     line-height: 100%;
     color: #202020;
   }
+
+  @media (max-width: 375px) {
+    h1 {
+      font-size: 20px;
+    }
+  }
+
+  @media (max-width: 320px) {
+    h1 {
+      font-size: 18px;
+    }
+  }
 `;
 
 export const ContainerList = styled.ul`
@@ -24,6 +36,26 @@ export const ContainerList = styled.ul`
   column-gap: 15px;
   row-gap: 16px;
   margin-top: 18px;
+
+  @media (max-width: 1024px) {
+    grid-template-columns: 162px 162px 162px 162px 162px;
+  }
+
+  @media (max-width: 768px) {
+    grid-template-columns: 151px 151px 151px 151px;
+  }
+
+  @media (max-width: 425px) {
+    grid-template-columns: 173px 173px;
+  }
+
+  @media (max-width: 375px) {
+    grid-template-columns: 150px 150px;
+  }
+
+  @media (max-width: 320px) {
+    grid-template-columns: 130px 130px;
+  }
 `;
 
 export const ContainerCardFamily = styled.li`

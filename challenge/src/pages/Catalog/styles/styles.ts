@@ -26,4 +26,41 @@ export const ContainerCatalog = styled.div`
     border-radius: 5px;
     background: linear-gradient(90deg, rgba(161, 28, 243, 0.6) 0%, rgba(216, 53, 197, 0.6) 100%);
   }
+
+
+
+  @media (max-width: 1024px) {
+    padding: 29px 80px;
+  }
+
+  @media (max-width: 768px) {
+    padding: 29px 60px;
+  }
+
+  @media (max-width: 425px) {
+    padding: 29px 30px;
+  }
+
+  @media (max-width: 375px) {
+    padding: 29px 30px;
+
+    h1 {
+      font-size: 20px;
+    }
+
+    span {
+      width: 30px;
+      height: 4px;
+    }
+  }
+
+  @media (max-width: 320px) {
+    h1 {
+      font-size: 18px;
+    }
+
+    span {
+      width: 28px;
+    }
+  }
 `;

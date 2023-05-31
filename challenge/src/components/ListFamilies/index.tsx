@@ -18,11 +18,9 @@ import { ContainerListFamilies, ContainerList, LimitListWarning } from "./styles
 
 export function ListFamilies() {
   const [families, setFamilies] = useState<Family[]>([])
-  const [isLoading, setIsLoading] = useState(false)
   const [isLimit, setIsLimit] = useState(false)
   const [skip, setSkip] = useState(0)
   const pointForNewFetchRef = useRef<HTMLParagraphElement | null>(null)
-
   useEffect(() => {
     refetch()
   }, [])
@@ -35,6 +33,8 @@ export function ListFamilies() {
     const data = await getFamilies(skip, 21)
 
     if (data.length) {
+      setIsLimit(false)
+
       const familiesData: Family[] = data.map(i => ({
         id: i.id,
         name: i.details.name,
@@ -52,14 +52,13 @@ export function ListFamilies() {
     const options = {
       root: null,
       rootMargin: "20px",
-      threshold: 1.0
+      threshold: 1.0,
     }
-
+    
     const intersectionObserver = new IntersectionObserver(entries => {
       const target = entries[0]
-
       if (target.isIntersecting) {
-        setSkip(currentState => currentState + 1)
+        setSkip(currentState => currentState + 10.5)
       }
     }, options)
 
@@ -85,7 +84,7 @@ export function ListFamilies() {
           )
         }
       </ContainerList>
-      
+
       <p ref={pointForNewFetchRef}>
         {
           !isLimit &&
