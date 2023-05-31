@@ -17,4 +17,4 @@
 </ol>
 
 ## Observações:
-Você acessar o projeto online, de qualquer dispositivo, basta clicar <a href="https://thiagopaz1.github.io/3D-block-catalog/" target="_blank">aqui!</a>
+Você pode acessar o projeto online, de qualquer dispositivo, basta clicar <a href="https://thiagopaz1.github.io/3D-block-catalog/" target="_blank">aqui!</a>
