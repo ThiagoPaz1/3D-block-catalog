@@ -10,7 +10,7 @@ import { ContainerAnnouncementBar, Button } from "./style/styles"
 
 export function AnnouncementBar() {
   const [closeAnnouncementBar, setCloseAnnouncementBar] = useState(false)
-  const { screenWidth } = useScreenWidth()
+  const { isMatch } = useScreenWidth("(max-width: 425px)")
 
   function handleCloseAnnouncementBar() {
     setCloseAnnouncementBar(true)
@@ -23,7 +23,7 @@ export function AnnouncementBar() {
           "" :
           <ContainerAnnouncementBar>
             {
-              screenWidth <= 425 &&
+              isMatch &&
               <div onClick={handleCloseAnnouncementBar}>
                 Fechar
                 <img src={closeImg} alt="Ícone de fechar" />
